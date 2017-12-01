@@ -1,0 +1,35 @@
+{
+  "name": "html-cli",
+  "version": "0.0.1",
+  "description": "html scss css img template project",
+  "main": "index.js",
+  "bin": {
+    "htm": "./bin/htm.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfey/htm-cli.git"
+  },
+  "keywords": [
+    "html",
+    "scss",
+    "css",
+    "img",
+    "sprite"
+  ],
+  "author": "perfey",
+  "bugs": {
+    "url": "https://github.com/perfey/htm-cli/issues"
+  },
+  "homepage": "https://github.com/perfey/htm-cli/blob/master/README.md",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "inquirer": "^3.0.6",
+    "lodash": "^4.17.4"
+  },
+  "license": "ISC"
+}
