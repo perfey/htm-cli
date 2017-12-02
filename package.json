@@ -1,6 +1,6 @@
 {
   "name": "html-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "html scss css img template project",
   "main": "index.js",
   "bin": {

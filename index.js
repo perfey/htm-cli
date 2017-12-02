@@ -1,17 +1,10 @@
 const program = require('commander')
 const json = require('./package.json')
-const init = require('./lib/init')
-const component = require('./lib/component')
-const check = require('./lib/check')
-const { build } = require('./lib/build')
-const view = require('./lib/view')
-const upload = require('./lib/upload')
+const create = require('./lib/create')
 
-
-//组件说明
 program
   .version(json.version)
-  .description('通用能力平台构建工具')
+  .description('常规html项目脚手架')
   .option('-v', '版本号')
   
 if (!process.argv.slice(2).length) {
@@ -20,56 +13,22 @@ if (!process.argv.slice(2).length) {
   console.info('version', json.version)
 }
 
-//初始化组件库
+// 创建项目
 program
-  .command('init')
-  .alias('i')
-  .description('初始化组件库')
-  .option('-n, --name [name]', '组件库名称')
-  .action(option => {
-    init(option)
-  })
-  .on('--help', function() {
-    console.info('  Examples:')
-    console.info('')
-    console.info('$ comby init --name [libraryName]')
-    console.info('$ comby i -n [libraryName]')
-  })
-
-//新建组件
-program
-  .command('component')
+  .command('create')
   .alias('c')
-  .description('创建新的组件')
-  .option('-n, --name [name]', '组件名')
+  .description('初始化项目')
+  .option('-n, --name [name]', '项目英文名称')
   .action(option => {
-    component(option)
+    create(option)
   })
   .on('--help', function() {
     console.info('  Examples:')
     console.info('')
-    console.info('$ comby component --name [componentName]')
-    console.info('$ comby c -n [componentName]')
+    console.info('$ htm create --name [name]')
+    console.info('$ htm c -n [name]')
   })
 
-//校验
-program
-  .command('check')
-  .alias('ch')
-  .description('校验组件')
-  .option('-n, --name [name]', '组件名')
-  .option('-p, --precommit [precommit]', '是否为precommit检查，默认false')
-  .option('-j, --js [js]', '只校验js，默认false')
-  .option('-o, --old [old]', '是否为旧的目录结构，默认false')
-  .action(option => {
-    check(option)
-  })
-  .on('--help', function() {
-    console.info('  Examples:')
-    console.info('')
-    console.info('$ comby check --name [componentName]')
-    console.info('$ comby ch -n [componentName]')
-  })
 
 //构建组件库
 program
