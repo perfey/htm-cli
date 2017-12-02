@@ -32,5 +32,8 @@ htm create
 雪碧图可以区分合并，slice目录下新建文件夹可以合并为新的雪碧图
 
 ### 图片压缩
-目前没有好用的图片压缩npm包，需要手动压缩，推荐[tinypng]: https://tinypng.com/ [optimizilla]:http://optimizilla.com/zh/  
+目前没有好用的图片压缩npm包，需要手动压缩，推荐[tinypng] [optimizilla]  
 合并完成的雪碧图，会在publish目录，压缩后放到`./generate_sprite/min`目录，再运行`npm run publish`即可，工具会自动替换publish目录的雪碧图  
+
+[tinypng]: https://tinypng.com/
+[optimizilla]:http://optimizilla.com/zh/
