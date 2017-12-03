@@ -24,6 +24,24 @@ htm create
 ```
 创建完毕项目后，进入项目跟目录`npm install`安装依赖，即可开始开发
 
+## 开发项目
+
+在项目内执行npm script即可
+
+### sass编译
+
+```shell
+npm run sass
+```
+监控`scss`文件夹，编译到`css`文件夹
+
+### 打包项目
+
+```shell
+npm run publish
+```
+合并雪碧图，图片base64 inline到css
+
 ## 说明
 
 ### 项目目录

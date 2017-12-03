@@ -9,7 +9,7 @@ const colors = require('colors')
 
 const config = {
   sprite: {
-    padding: 4,
+    padding: 6,
     ratio: {{screenRatio}}
   }
 }
