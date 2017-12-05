@@ -22,6 +22,13 @@ npm install -g node-sass
 ```shell
 htm create
 ```
+
+参数说明：
+```shell
+  -n, --name [name]         项目名
+  -t, --type [type]         项目类型：html(默认) ejs
+```
+
 创建完毕项目后，进入项目跟目录`npm install`安装依赖，即可开始开发
 
 ## 开发项目
@@ -34,6 +41,13 @@ htm create
 npm run sass
 ```
 监控`scss`文件夹，编译到`css`文件夹
+
+### ejs编译
+
+```shell
+npm run ejs:watch
+```
+监控`ejs`文件夹内的*.ejs，编译到`html`文件夹
 
 ### 打包项目
 
