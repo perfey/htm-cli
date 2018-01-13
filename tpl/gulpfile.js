@@ -1,4 +1,6 @@
 const gulp = require('gulp')
+const ejs = require('gulp-ejs')
+const gutil = require('gulp-util')
 const postcss = require('gulp-postcss')
 const sprites = require('postcss-sprites')
 const base64 = require('gulp-base64')
@@ -20,6 +22,18 @@ const config = {
     jpg: false  // 压缩jpg格式的图片
   }
 }
+
+gulp.task('ejs', function() {
+  gulp.src('./ejs/*.ejs')
+    .pipe(ejs({}, {}, { 
+      ext: '.html' 
+    }).on('error', gutil.log))
+    .pipe(gulp.dest('./html'))
+});
+
+gulp.task('ejs-watch', function () {
+  gulp.watch('./ejs/**/*.ejs', ['ejs']);
+});
 
 gulp.task('css_img', (done) => {
   const opts = {
