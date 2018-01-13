@@ -6,9 +6,9 @@ program
   .version(json.version)
   .description('常规html项目脚手架')
   .option('-v', '版本号')
-  
+
 if (!process.argv.slice(2).length) {
-  program.outputHelp();
+  program.outputHelp()
 } else if (process.argv.length === 3 && process.argv[2] === '-v') {
   console.info('version', json.version)
 }
@@ -29,3 +29,5 @@ program
     console.info('$ htm create --name [name]')
     console.info('$ htm c -n [name]')
   })
+
+program.parse(process.argv)

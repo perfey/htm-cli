@@ -64,8 +64,25 @@ npm run publish
 雪碧图可以区分合并，slice目录下新建文件夹可以合并为新的雪碧图
 
 ### 图片压缩
-目前没有好用的图片压缩npm包，需要手动压缩，推荐 [tinypng] [optimizilla]  
-合并完成的雪碧图，会在publish目录，压缩后放到`./generate_sprite/min`目录，再运行`npm run publish`即可，工具会自动替换publish目录的雪碧图  
+使用 [image-minify] 实现图片压缩功能，png图片压缩效果比较令人满意，默认会开启png图片压缩
+```javascript
+imageMinCheck: false, // 检查图片是否压缩了
+imageMinify: {  // 图片压缩配置
+  // spritePngOnly: true, // 只压缩png格式的雪碧图
+  png: true,  // 压缩png格式的图片
+  jpg: false  // 压缩jpg格式的图片
+}
+```
 
+如果极致要求，可以采用手动压缩的方式，项目配置如下
+```javascript
+imageMinCheck: true, // 检查图片是否压缩了
+imageMinify: false,  // 图片压缩配置
+```
+手动压缩图片推荐 [tinypng] 或者 [optimizilla]   
+合并完成的雪碧图，会生成在publish目录，把雪碧图压缩后放到`./generate_sprite/min`目录，再运行`npm run publish`即可自动替换publish目录的雪碧图为压缩后的资源，如果雪碧图没有调整就无需每次`publish`都重复压缩雪碧图  
+
+
+[image-minify]: https://github.com/perfey/image-minify
 [tinypng]: https://tinypng.com/
-[optimizilla]:http://optimizilla.com/zh/
+[optimizilla]: http://optimizilla.com/zh/
